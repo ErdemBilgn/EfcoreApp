@@ -1,12 +1,14 @@
 @model Student
 
 @{
-ViewBag.Title = "Öğrenci Ekle";
+ViewBag.Title = "Öğrenci Güncelle";
 }
 
-<h3>Öğrenci Ekle</h3>
+<h3>Öğrenci Güncelle</h3>
 <hr>
-<form asp-controller="Student" asp-action="Create" method="post">
+
+<form asp-controller="Student" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="StudentId">
     <div class="mb-3">
         <label asp-for="StudentName" class="form-label">Öğrenci Adı</label>
         <input asp-for="StudentName" class="form-control">
@@ -27,5 +29,5 @@ ViewBag.Title = "Öğrenci Ekle";
         <input asp-for="Phone" class="form-control">
     </div>
 
-    <button type="submit" class="btn btn-secondary">Kaydet</button>
+    <button type="submit" class="btn btn-secondary">Güncelle</button>
 </form>

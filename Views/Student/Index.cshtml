@@ -1,4 +1,7 @@
 @model IEnumerable<Student>
+    @{
+    ViewBag.Title = "Öğrenci Listesi";
+    }
 
     <h3>Öğrenci Listesi</h3>
     <a href="/Student/Create" class="btn btn-primary mt-2">Öğrenci Ekle</a>
@@ -20,7 +23,8 @@
                 <td>@Html.DisplayFor(m => item.StudentName)</td>
                 <td>@Html.DisplayFor(m => item.StudentSurname)</td>
                 <td>
-                    <a href="" class="btn btn-primary btn-sm">Detay</a>
+                    <a asp-controller="Student" asp-action="Edit" asp-route-id="@item.StudentId"
+                        class="btn btn-primary btn-sm">Edit</a>
                     <a href="" class="btn btn-danger btn-sm">Sil</a>
                 </td>
             </tr>
