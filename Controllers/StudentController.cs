@@ -25,6 +25,7 @@ namespace EfcoreApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Student model)
         {
             _context.Students.Add(model);
