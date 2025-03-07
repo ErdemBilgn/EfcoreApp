@@ -28,5 +28,7 @@ namespace EfcoreApp.Data
 
         [Display(Name = "Telefon")]
         public string? Phone { get; set; }
+
+        public ICollection<CourseRecord> CourseRecords { get; set; } = new List<CourseRecord>();
     }
 }

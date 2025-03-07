@@ -41,7 +41,11 @@ namespace EfcoreApp.Controllers
                 return NotFound();
             }
 
-            Student? student = await _context.Students.FindAsync(id);
+            Student? student = await _context
+            .Students
+            .Include(s => s.CourseRecords)
+            .ThenInclude(s => s.Course)
+            .FirstOrDefaultAsync(s => s.StudentId == id);
 
             if (student == null)
             {

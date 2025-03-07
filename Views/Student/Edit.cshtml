@@ -6,28 +6,41 @@ ViewBag.Title = "Öğrenci Güncelle";
 
 <h3>Öğrenci Güncelle</h3>
 <hr>
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Student" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="StudentId">
+            <div class="mb-3">
+                <label asp-for="StudentName" class="form-label">Öğrenci Adı</label>
+                <input asp-for="StudentName" class="form-control">
+            </div>
 
-<form asp-controller="Student" asp-action="Edit" method="post">
-    <input type="hidden" asp-for="StudentId">
-    <div class="mb-3">
-        <label asp-for="StudentName" class="form-label">Öğrenci Adı</label>
-        <input asp-for="StudentName" class="form-control">
+            <div class="mb-3">
+                <label asp-for="StudentSurname" class="form-label">Öğrenci Soyadı</label>
+                <input asp-for="StudentSurname" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">Eposta Adresi</label>
+                <input asp-for="Email" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">Telefon Numarası</label>
+                <input asp-for="Phone" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Güncelle</button>
+        </form>
     </div>
-
-    <div class="mb-3">
-        <label asp-for="StudentSurname" class="form-label">Öğrenci Soyadı</label>
-        <input asp-for="StudentSurname" class="form-control">
+    <div class="col-4">
+        <h4>Kurslar</h4>
+        <hr>
+        <ul>
+            @foreach(CourseRecord rcd in Model.CourseRecords)
+            {
+            <li>@rcd.Course.Title</li>
+            }
+        </ul>
     </div>
-
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label">Eposta Adresi</label>
-        <input asp-for="Email" class="form-control">
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="Phone" class="form-label">Telefon Numarası</label>
-        <input asp-for="Phone" class="form-control">
-    </div>
-
-    <button type="submit" class="btn btn-secondary">Güncelle</button>
-</form>
+</div>

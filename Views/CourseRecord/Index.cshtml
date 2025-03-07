@@ -1,6 +1,14 @@
 @model IEnumerable<CourseRecord>
 
+    @{
+    ViewBag.Title = "Kurs Kaydı Listesi";
+    }
+
+
     <h3>Öğrenci Listesi</h3>
+    <a href="/CourseRecord/Create" class="btn btn-primary mt-2">Kurs Kaydı Ekle</a>
+
+    <hr>
     <table class="table table-bordered">
         <thead>
             <tr>
