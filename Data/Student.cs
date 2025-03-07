@@ -14,6 +14,15 @@ namespace EfcoreApp.Data
         [Display(Name = "Öğrenci Soyadı")]
         public string? StudentSurname { get; set; }
 
+        [Display(Name = "Öğrenci Adı Soyadı")]
+        public string StudentFullName
+        {
+            get
+            {
+                return this.StudentName + " " + this.StudentSurname;
+            }
+        }
+
         [Display(Name = "Email")]
         public string? Email { get; set; }
 
