@@ -13,5 +13,7 @@ namespace EfcoreApp.Data
         public DbSet<Student> Students => Set<Student>();
 
         public DbSet<CourseRecord> CourseRecords => Set<CourseRecord>();
+
+        public DbSet<Teacher> Teachers => Set<Teacher>();
     }
 }
