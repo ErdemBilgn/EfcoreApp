@@ -8,5 +8,7 @@ namespace EfcoreApp.Data
 
         [Display(Name = "Başlık")]
         public string? Title { get; set; }
+
+        public ICollection<CourseRecord> CourseRecords { get; set; } = new List<CourseRecord>();
     }
 }

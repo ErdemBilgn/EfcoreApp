@@ -6,13 +6,28 @@ ViewBag.Title = "Kurs Güncelle";
 
 <h3>Kurs Güncelle</h3>
 <hr>
-<form asp-controller="Course" asp-action="Edit" method="post">
-    <input type="hidden" asp-for="CourseId">
 
-    <div class="mb-3">
-        <label asp-for="Title" class="form-label">Kurs Adı</label>
-        <input asp-for="Title" class="form-control">
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Course" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="CourseId">
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Kurs Adı</label>
+                <input asp-for="Title" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Güncelle</button>
+        </form>
     </div>
-
-    <button type="submit" class="btn btn-secondary">Güncelle</button>
-</form>
+    <div class="col-4">
+        <h4>Öğrenciler</h4>
+        <hr>
+        <ul>
+            @foreach(CourseRecord rcd in Model.CourseRecords)
+            {
+            <li>@rcd.Student.StudentFullName</li>
+            }
+        </ul>
+    </div>
+</div>
