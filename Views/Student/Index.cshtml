@@ -23,9 +23,8 @@
                 <td>@Html.DisplayFor(m => item.StudentName)</td>
                 <td>@Html.DisplayFor(m => item.StudentSurname)</td>
                 <td>
-                    <a asp-controller="Student" asp-action="Edit" asp-route-id="@item.StudentId"
-                        class="btn btn-primary btn-sm">Edit</a>
-                    <a href="" class="btn btn-danger btn-sm">Sil</a>
+                    <a asp-action="Edit" asp-route-id="@item.StudentId" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.StudentId" class="btn btn-danger btn-sm">Delete</a>
                 </td>
             </tr>
             }

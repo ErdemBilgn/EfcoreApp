@@ -1,0 +1,16 @@
+@model Course
+
+@{
+ViewBag.Title = "Kurs Ekle";
+}
+
+<h3>Kurs Ekle</h3>
+<hr>
+<form asp-controller="Course" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label">Kurs Adı</label>
+        <input asp-for="Title" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>
