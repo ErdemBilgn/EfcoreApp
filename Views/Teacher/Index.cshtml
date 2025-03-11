@@ -1,0 +1,34 @@
+@model IEnumerable<Teacher>
+    @{
+    ViewBag.Title = "Öğretmen Listesi";
+    }
+
+    <h3>Öğretmen Listesi</h3>
+    <a href="/Teacher/Create" class="btn btn-primary mt-2">Öğretmen Ekle</a>
+
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th style="width: 150px;">@Html.DisplayNameFor(m => m.TeacherId)</th>
+                <th>@Html.DisplayNameFor(m => m.TeacherName)</th>
+                <th>@Html.DisplayNameFor(m => m.TeacherSurname)</th>
+                <th>@Html.DisplayNameFor(m => m.StartDate)</th>
+                <th style="width: 150px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Teacher item in Model){
+            <tr>
+                <td>@Html.DisplayFor(m => item.TeacherId)</td>
+                <td>@Html.DisplayFor(m => item.TeacherName)</td>
+                <td>@Html.DisplayFor(m => item.TeacherSurname)</td>
+                <td>@Html.DisplayFor(m => item.StartDate)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.TeacherId" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.TeacherId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>

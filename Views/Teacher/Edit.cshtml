@@ -1,0 +1,43 @@
+@model Teacher
+
+@{
+ViewBag.Title = "Öğretmen Güncelle";
+}
+
+<h3>Öğretmen Güncelle</h3>
+<hr>
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Teacher" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="TeacherId">
+            <div class="mb-3">
+                <label asp-for="TeacherName" class="form-label"></label>
+                <input asp-for="TeacherName" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="TeacherSurname" class="form-label"></label>
+                <input asp-for="TeacherSurname" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label"></label>
+                <input asp-for="Phone" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="StartDate" class="form-label"></label>
+                <input asp-for="StartDate" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Güncelle</button>
+        </form>
+    </div>
+    <div class="col-4">
+    </div>
+</div>

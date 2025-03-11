@@ -1,24 +1,22 @@
 using System.ComponentModel.DataAnnotations;
-using EfcoreApp.Models;
+using EfcoreApp.Data;
 
-namespace EfcoreApp.Data
+namespace EfcoreApp.Models
 {
-    public class Course
+    public class CourseDTO
     {
         public int CourseId { get; set; }
 
         [Display(Name = "Başlık")]
+        [Required(ErrorMessage = "Başlık Alanı Boş Bırakılamaz")]
+        [StringLength(50, ErrorMessage = "Başlık 50 karakterden uzun olamaz")]
         public string? Title { get; set; }
 
+        [Required(ErrorMessage = "Lütfen Bir Öğretmen Seçiniz")]
         public int TeacherId { get; set; }
-
-        public Teacher Teacher { get; set; } = null!;
 
         public ICollection<CourseRecord> CourseRecords { get; set; } = new List<CourseRecord>();
 
-        public static implicit operator Course?(CourseDTO? v)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
